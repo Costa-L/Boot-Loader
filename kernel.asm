@@ -71,12 +71,27 @@ bot db 1
 
 ; =========================================================================================================== ;
 
+; Observação importante:
+; - O jogo em si é completamente caricato e não tem o objetivo de ofender nada ou ninguem
 
 
-
-
-
-
+; Estruturamos o jogo como maquina de estados para facilitar as coisas
+; O 1º estado(Menu):
+; Basicamente printamos todo o menu e resetamos as variaveis ao apertar enter vamos para o estado jogo.
+; O 2º estado(Jogo):
+; O jogo consiste em um genius onde o jogador é desafiado a completar a sequencia até o round 13
+; Como podem ver usamos bastante memoria então estamos bem no limite, foi feito uma função cujo o foco principal
+; era transformar imagens pequenas em imagens maiores, a ideia por trás disso é ao invez de printar cada pixel
+; printamos um retangulo ou um quadrado.
+; mais sobre o jogo, a sequencia gerada é completamente randomica onde pegamos um numero de 0 a 10 para gerar a proxima jogada
+; se o jogador errar um termo da sequencia iremos para o estado derrota caso contrario vamos para o estado de vitoria
+; O 3º estado(Derrota):
+; Nesse estado printamos um texto convidando o player a jogar novamente apertando y ou n se ele deseja desistir caso ele aperte
+; y ele ira voltar ao estado jogo caso contrario irá para o estado dos creditos
+; O 4º estado(Vitoria):
+; Aqui o jogador ganha o jogo e é apresentado a tela de vitoria, onde temos um texto engraçado e ao apertar enter o jogador vai para o estado de creditos
+; o 5º estado(Creditos):
+; Aqui temos os creditos do jogo, um texto e jogo encerra
 
 ; =========================================================================================================== ;
 
