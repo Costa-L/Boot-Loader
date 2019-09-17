@@ -10,7 +10,6 @@ final db ' ', 0
 
 str1 db 'Retornando a tempos perdidos',0
 str2 db 'Entrando no desconhecido', 0
-str3 db 'Alargando orelhas', 0
 str4 db 'Aprendendo a escrever', 0
 str5 db 'Expulsando os espanhois', 0
 dot db '.', 0
@@ -44,10 +43,6 @@ start:
 	call printDots
 
 	mov si, str2
-	call printString
-	call printDots
-
-	mov si, str3
 	call printString
 	call printDots
 
