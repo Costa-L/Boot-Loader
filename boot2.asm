@@ -12,13 +12,31 @@ str1 db 'Retornando a tempos perdidos',0
 str2 db 'Entrando no desconhecido', 0
 str3 db 'Alargando orelhas', 0
 str4 db 'Aprendendo a escrever', 0
-str5 db 'Vestindo tanga', 0
-str6 db 'Expulsando os espanhois', 0
+str5 db 'Expulsando os espanhois', 0
 dot db '.', 0
 finalDot db '.', 10, 13, 0
 
 start:
-    mov bl, 6 ; Seta cor dos caracteres para verde
+    mov bl, 3 ; Seta cor dos caracteres para verde
+	call limpaTela
+	
+	mov si, line1
+	call printString
+	call printDots
+	
+	mov si, line2
+	call printString
+	call printDots
+	
+	mov si, line3
+	call printString
+	call printDots
+	
+	mov si, line4
+	call printString
+	call printDots
+	
+	mov bl, 6 ; Seta cor dos caracteres para verde
 	call limpaTela
 	
 	mov si, str1
@@ -37,13 +55,9 @@ start:
 	call printString
 	call printDots
 
-	;mov si, str5
-	;call printString
-	;call printDots
-
-	;mov si, str6
-	;call printString
-	;call printDots    
+	mov si, str5
+	call printString
+	call printDots 
 
     xor ax, ax
     mov ds, ax
@@ -132,7 +146,7 @@ printString:
 	mov ah, 0xe
 	int 10h	
 
-	mov dx, 100;tempo do delay
+	mov dx, 50;tempo do delay
 	call delay 
 	
 	jmp printString
