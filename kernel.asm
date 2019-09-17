@@ -534,7 +534,7 @@ Game:
             call printblock
             jmp .compare
         .compare:
-            mov dx, 1000
+            mov dx, 2000
             call delay
             mov cl,[bot]
             cmp cl,1
